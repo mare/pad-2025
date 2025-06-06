@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s, background 0.2s, padding 0.2s;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.25em 0.5em;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #3498db;
+    background: #f0f6ff;
+}
+
+main {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.15);
+    z-index: 0;
+}
+.hero > .container {
+    position: relative;
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+.content-section {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(52, 152, 219, 0.08);
+    transition: box-shadow 0.3s;
+}
+
+.content-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.content-section h3 {
+    color: #34495e;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.agenda-item {
+    border-left: 4px solid #3498db;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #f8f9fa;
+    border-radius: 0 5px 5px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.agenda-item.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.time {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+/* Scroll to top button */
+#scrollTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#scrollTop:hover {
+    background: #1565c0;
+}
+
+/* Dark mode */
+body.dark {
+    background: #20232a;
+    color: #ececec;
+}
+body.dark nav, body.dark .content-section {
+    background: #23272f;
+    color: #eee;
+}
+body.dark .hero {
+    background: linear-gradient(135deg, #212b3a 0%, #4a3b6e 100%);
+    color: #fff;
+}
+body.dark .agenda-item {
+    background: #23272f;
+}
+body.dark .nav-link {
+    color: #eee;
+}
+body.dark .nav-link:hover,
+body.dark .nav-link.active {
+    color: #ffdc74;
+    background: #23272f;
+}
+body.dark #scrollTop {
+    background: #444b5c;
+    color: #fff;
+}
+body.dark #scrollTop:hover {
+    background: #ffe082;
+    color: #23272f;
+}
+body.dark .contact-card {
+    background: #23272f;
+    color: #eee;
+}
+
+body.dark .content-section h2,
+body.dark .content-section h3,
+body.dark .agenda-item h3 {
+    color: #90caf9; /* Svetlo modra */
+}
+
+body.dark .agenda-item .time {
+    color: #b3e5fc; /* Še svetlejša modra za čas */
+}
+
+body.dark a {
+    color: #90caf9; /* Svetlo modra */
+    transition: color 0.2s;
+}
+body.dark a:hover, body.dark a:focus {
+    color: #fff; /* Povsem bela ob hoverju */
+    text-decoration: underline;
+}
+
+body.dark .logo {
+    color: #90caf9; /* ali #fff za povsem belo */
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 0.5rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0;
+    }
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex !important;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.15);
+        padding: 2rem 0;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        display: block;
+    }
+}
