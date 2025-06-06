@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAD</title>
+    <title>Letni dogodek 2025</title>
     <style>
         * {
             margin: 0;
@@ -83,7 +83,7 @@
 
         .hero {
             text-align: center;
-            padding: 4rem 0;
+            padding: 4rem 2rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             margin-bottom: 3rem;
@@ -91,13 +91,17 @@
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             font-weight: 300;
         }
 
         .hero p {
             font-size: 1.2rem;
             opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            padding: 0 1rem;
         }
 
         .content-section {
@@ -157,16 +161,37 @@
                 gap: 1rem;
             }
 
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+                padding: 0 0.5rem;
             }
 
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 0;
             }
         }
 
@@ -223,50 +248,55 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Pedagoško andragoški dnevi</div>
-                <ul class="nav-menu">
-                    <li><a href="#" onclick="showPage('home')" class="nav-link active">Prva stran</a></li>
-                    <li><a href="#" onclick="showPage('agenda')" class="nav-link">Program</a></li>
-                    <li><a href="#" onclick="showPage('archive')" class="nav-link">Arhiv</a></li>
-                    <li><a href="#" onclick="showPage('contact')" class="nav-link">Kontakt</a></li>
+                <div class="logo">Letni dogodek</div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#" class="nav-link active" data-page="home">Domov</a></li>
+                    <li><a href="#" class="nav-link" data-page="agenda">Agenda</a></li>
+                    <li><a href="#" class="nav-link" data-page="archive">Arhiv</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Kontakt</a></li>
                 </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main>
-        <div class="container">
-            <!-- Home Page -->
-            <div id="home" class="page active">
-                <div class="hero">
-                    <h1> Dobrodošli na spletni strani PAD!</h1>
-                    <p>Pedagoško-andragoški dnevi (PAD) so vsakoletno srečanje diplomantov Oddelka za pedagogiko in andragogiko, ki poteka že od leta 1982.</p>
-                </div>
-                
-                <div class="content-section">
-                    <h2>O PAD</h2>
-                    <p>Pedagoško-andragoški dnevi (PAD) so vsakoletno srečanje diplomantov Oddelka za pedagogiko in andragogiko, ki poteka že od leta 1982.</p>
-                    <p>This year's theme focuses on innovation, collaboration, and the future of our industry. We're excited to present an engaging program with distinguished speakers and interactive sessions.</p>
-                </div>
-
-                <div class="content-section">
-                    <h2>Ključne informacije</h2>
-                  	 <p><strong>Datum:</strong> [Vnesite datum]</p>
-                   	 <p><strong>Lokacija:</strong> [Vnesite lokacijo]</p>
-                     <p><strong>Čas:</strong> [Vnesite čas]</p>
+        <!-- Home Page -->
+        <div class="page active" id="home">
+            <div class="hero">
+                <div class="container">
+                    <h1>Letni dogodek 2025</h1>
+                    <p>Pridružite se nam na našem letnem dogodku</p>
                 </div>
             </div>
-
-            <!-- Agenda Page -->
-            <div id="agenda" class="page">
+            <div class="container">
                 <div class="content-section">
-                    <h2>Program</h2>
-                    <p>Detailed schedule of our annual event activities.</p>
+                    <h2>Dobrodošli</h2>
+                    <p>Vabimo vas na naš letni dogodek, kjer se bomo srečali strokovnjaki in navdušenci iz naše oblasti. Dogodek bo potekal v sproščenem vzdušju in bo ponudil odlične priložnosti za mreženje in izmenjavo izkušenj.</p>
                     
-                                        
+                    <h3>Ključne informacije</h3>
+                    <p><strong>Datum:</strong> [Vnesite datum]</p>
+                    <p><strong>Lokacija:</strong> [Vnesite lokacijo]</p>
+                    <p><strong>Čas:</strong> [Vnesite čas]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agenda Page -->
+        <div class="page" id="agenda">
+            <div class="container">
+                <div class="content-section">
+                    <h2>Agenda dogodka</h2>
+                    
                     <div class="agenda-item">
                         <div class="time">9:00 - 9:30</div>
                         <h3>Registracija in dobrodošlica</h3>
@@ -309,11 +339,11 @@
                         <p>Povzetek in načrti za prihodnost</p>
                     </div>
                 </div>
-                /div>
             </div>
+        </div>
 
-            <!-- Archive Page -->
-             <div class="page" id="archive">
+        <!-- Archive Page -->
+        <div class="page" id="archive">
             <div class="container">
                 <div class="content-section">
                     <h2>Arhiv preteklih dogodkov</h2>
@@ -346,30 +376,40 @@
             </div>
         </div>
 
-            <!-- Contact Page -->
-            <div id="contact" class="page">
+        <!-- Contact Page -->
+        <div class="page" id="contact">
+            <div class="container">
                 <div class="content-section">
-                    <h2> Stopite v stik z nami</h2>
-                    <p>Get in touch with our event organizing team for any questions or inquiries.</p>
+                    <h2>Kontaktne informacije</h2>
                     
                     <div class="contact-info">
                         <div class="contact-card">
-                            <h3>Informacije</h3>
-                            <p>Email: info@annualevent.com</p>
-                            <p>Phone: +1 (555) 123-4567</p>
+                            <h3>Splošne informacije</h3>
+                            <p><strong>E-pošta:</strong> info@vasadomena.si</p>
+                            <p><strong>Telefon:</strong> +386 X XXX XX XX</p>
                         </div>
-                        
+
                         <div class="contact-card">
-                            <h3>Prijava</h3>
-                            <p>Email: registration@annualevent.com</p>
-                            <p>Phone: +1 (555) 123-4568</p>
+                            <h3>Organizator</h3>
+                            <p><strong>Ime:</strong> [Ime organizatorja]</p>
+                            <p><strong>E-pošta:</strong> organizator@vasadomena.si</p>
+                            <p><strong>Telefon:</strong> +386 X XXX XX XX</p>
                         </div>
-                                          
-                 		<div class="contact-card">
-                            <h3>Naslov</h3>
-                            <p>123 Event Street<br>
-                            Conference City, ST 12345<br>
-                            United States</p>
+
+                        <div class="contact-card">
+                            <h3>Lokacija</h3>
+                            <p><strong>Naslov:</strong></p>
+                            <p>[Ulica in številka]</p>
+                            <p>[Poštna številka] [Mesto]</p>
+                            <p>Slovenija</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>Sledite nam</h3>
+                            <p><a href="#">Facebook</a></p>
+                            <p><a href="#">Twitter</a></p>
+                            <p><a href="#">LinkedIn</a></p>
+                            <p><a href="#">Instagram</a></p>
                         </div>
                     </div>
                 </div>
@@ -377,26 +417,47 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Oddelek za pedagogiko in andragogiko UL FF.</p>
-        </div>
-    </footer>
-
     <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update navigation
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => link.classList.remove('active'));
-            event.target.classList.add('active');
-        }
+            const pages = document.querySelectorAll('.page');
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+
+            // Page navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and pages
+                    navLinks.forEach(nl => nl.classList.remove('active'));
+                    pages.forEach(page => page.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding page
+                    const targetPage = this.getAttribute('data-page');
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Mobile hamburger menu
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
